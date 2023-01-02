@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
 import GenreCard from "../components/GenreCard";
 import ItemSeparator from "../components/ItemSeparator";
+import MovieCard from "../components/MovieCard";
 import Colors from "../constants/Colors";
 import Fonts from "../constants/Fonts";
 
@@ -35,10 +36,25 @@ const HomeScreen = () => {
           ListHeaderComponent={() => <ItemSeparator width={20} />}
           ListFooterComponent={() => <ItemSeparator width={20} />}
           keyExtractor={(item) => item}
+          //renderItem is used for the title for api
           renderItem={({ item }) => <GenreCard genreName={item} 
           active={item === activeGenres ? true : false}
           onPress={setActiveGenres}
           />
+        }
+        />
+      </View>
+      <View>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={Genres}
+          ItemSeparatorComponent={() => <ItemSeparator width={20} />}
+          ListHeaderComponent={() => <ItemSeparator width={20} />}
+          ListFooterComponent={() => <ItemSeparator width={20} />}
+          keyExtractor={(item) => item}
+          //renderItem is used for the title for api
+          renderItem={({ item }) => <MovieCard />
         }
         />
       </View>
