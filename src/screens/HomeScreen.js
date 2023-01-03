@@ -1,16 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, ScrollView, FlatList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import GenreCard from "../components/GenreCard";
 import ItemSeparator from "../components/ItemSeparator";
 import MovieCard from "../components/MovieCard";
 import Colors from "../constants/Colors";
 import Fonts from "../constants/Fonts";
-import { getAllGenres, getNowPlayingMovies, getUpcomingMovies } from "../services/MovieService";
+import { getAllGenres, getNowPlayingMovies, getUpcomingMovies , getMovieById } from "../services/MovieService";
 
 const Genres = ["All", "Action", "Comedy", "Romance", "Horror", "Sci-Fi"];
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [activeGenres, setActiveGenres] = useState("All");
   const [nowPlayingMovie, setNowPlayingMovie] = useState({});
   const [upcomingMovies, setUpcomingMovies] = useState({});
@@ -36,10 +37,10 @@ const HomeScreen = () => {
         backgroundColor={Colors.BASIC_BACKGROUND}
       />
 
-      <View style={styles.headerContainer}>
+      <SafeAreaView style={styles.headerContainer}>
         <Text style={styles.headerTitle}>Now Playing</Text>
         <Text style={styles.headerSubTitle}>VIEW ALL</Text>
-      </View>
+      </SafeAreaView>
 
       <View style={styles.generalListContainer}>
         <FlatList
@@ -78,7 +79,7 @@ const HomeScreen = () => {
               voteCount={item.vote_count}
               poster={item.poster_path}
               heartLess={false}
-              //onPress={() => navigation.navigate("movie", { movieId: item.id })}
+              onPress={() => navigation.navigate("movie", { movieId: item.id })}
             />
           )}
         />
@@ -106,7 +107,7 @@ const HomeScreen = () => {
               poster={item.poster_path}
               size={0.7}
               heartLess={false}
-              //onPress={() => navigation.navigate("movie", { movieId: item.id })}
+              onPress={() => navigation.navigate("movie", { movieId: item.id })}
             />
           )}
         />

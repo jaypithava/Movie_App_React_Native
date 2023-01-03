@@ -3,7 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import MovieScreen from './src/screens/MovieScreen';
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,5 +27,5 @@ export default () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
-  ) : (<AppLoading />) ;
+  ) : null;
 }
