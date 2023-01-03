@@ -109,7 +109,7 @@ const HomeScreen = ({navigation}) => {
               voteCount={item.vote_count}
               poster={item.poster_path}
               size={0.7}
-              heartLess={false}
+              heartLess={true}
               onPress={() => navigation.navigate("movie", { movieId: item.id })}
             />
           )}

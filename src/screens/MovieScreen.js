@@ -173,8 +173,8 @@ const MovieScreen = ({ route, navigation }) => {
             voteAverage={item.vote_average}
             voteCount={item.vote_count}
             poster={item.poster_path}
-            heartLess={false}
-            onPress={() => navigation.navigate("movie", { movieId: item.id })}
+            heartLess={true}
+            //onPress={() => navigation.navigate("movie", { movieId: item?.id})}
           />
         )}
       />
@@ -195,8 +195,8 @@ const MovieScreen = ({ route, navigation }) => {
             voteAverage={item.vote_average}
             voteCount={item.vote_count}
             poster={item.poster_path}
-            heartLess={false}
-            onPress={() => navigation.navigate("movie", { movieId: item.id })}
+            heartLess={true}
+            //onPress={() => navigation.navigate("movie", { movieId: item?.id})}
           />
         )}
       />
