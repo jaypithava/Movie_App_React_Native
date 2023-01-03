@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   overviewContainer: {
-    color: Colors.EXTRA_LIGHT_GRAY,
+    backgroundColor: Colors.EXTRA_LIGHT_GRAY,
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginVertical: 10,

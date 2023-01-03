@@ -47,6 +47,7 @@ const HomeScreen = ({navigation}) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           data={genres}
+          initialNumToRender={4}
           ItemSeparatorComponent={() => <ItemSeparator width={20} />}
           ListHeaderComponent={() => <ItemSeparator width={20} />}
           ListFooterComponent={() => <ItemSeparator width={20} />}
@@ -66,6 +67,7 @@ const HomeScreen = ({navigation}) => {
           horizontal
           showsHorizontalScrollIndicator={false}
           data={nowPlayingMovie.results}
+          initialNumToRender={4}
           ItemSeparatorComponent={() => <ItemSeparator width={20} />}
           ListHeaderComponent={() => <ItemSeparator width={20} />}
           ListFooterComponent={() => <ItemSeparator width={20} />}
@@ -101,6 +103,7 @@ const HomeScreen = ({navigation}) => {
           renderItem={({ item }) => (
             <MovieCard
               title={item.title}
+              initialNumToRender={4}
               language={item.original_language}
               voteAverage={item.vote_average}
               voteCount={item.vote_count}
