@@ -47,11 +47,7 @@ const MovieScreen = ({ route, navigation }) => {
 
   return (
     <ScrollView>
-      <StatusBar
-        style='light'
-        translucent={false}
-        backgroundColor={Colors.BASIC_BACKGROUND}
-      />
+      <StatusBar barStyle="dark-content" backgroundColor="transparent" translucent/>
       <LinearGradient
         colors={["rgba(0,0,0,0.5)", "rgba(217,217,217,0)"]}
         start={[0, 0.3]}
